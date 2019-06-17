@@ -70,11 +70,10 @@ class CassandraConan(ConanFile):
                                   'set(CASS_LIBS ${CASS_LIBS} iphlpapi psapi wsock32 crypt32 ws2_32 userenv)')
         cmake = self.configure_cmake()
         cmake.build()
+        cmake.install()
 
     def package(self):
         self.copy(pattern="LICENSE.txt", dst="license", src=self.source_subfolder)
-        cmake = self.configure_cmake()
-        cmake.install()
 
     def package_info(self):
         if self.options.shared:
