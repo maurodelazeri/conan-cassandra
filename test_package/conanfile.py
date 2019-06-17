@@ -15,6 +15,11 @@ class TestPackageConan(ConanFile):
         cmake.configure()
         cmake.build()
 
+    def imports(self):
+        if self.options["cassandra"].shared:
+            self.copy("*.dll", "bin", "bin")
+            self.copy("*.dylib", "bin", "lib")
+
     def test(self):
         with tools.environment_append(RunEnvironment(self).vars):
             bin_path = os.path.join("bin", "test_package")
