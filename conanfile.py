@@ -9,7 +9,7 @@ class CassandraConan(ConanFile):
     name = "cassandra"
     version = "2.11.0"
     description = "Cassandra C++ Driver"
-    url = "http://bitbucket-idb.nyoffice.tradeweb.com:7990/projects/TP/repos/conan-cassandra"
+    url = "https://github.com/sourcedelica/conan-cassandra"
     homepage = "https://github.com/datastax/cpp-driver"
     license = "Apache"
 
